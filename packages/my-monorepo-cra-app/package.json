@@ -1,5 +1,5 @@
 {
-  "name": "my-monorepo-cra-app",
+  "name": "@my-org/my-monorepo-cra-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

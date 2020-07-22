@@ -11,11 +11,15 @@
     "packages/*"
   ],
   "devDependencies": {
+    "concurrently": "^5.2.0",
     "lerna": "^3.18.3"
   },
   "scripts": {
     "story": "lerna run story --stream",
-    "prestart": "lerna run libbuild --stream",
-    "start": "lerna run start --stream"
+    "prestart": "lerna run build --stream",
+    "start": "lerna run start --stream",
+    "dev:share": "lerna run build --scope @my-org/my-monorepo-ui-lib --stream",
+    "dev:lite": "lerna run start  --scope @my-org/my-monorepo-cra-app --stream",
+    "dev": "concurrently \"yarn run dev:share\" \"yarn run dev:lite\""
   }
 }
